@@ -32,16 +32,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="MataKuliah.h" />
-		<Unit filename="Relation.h" />
-		<Unit filename="mahasiswa.h" />
-		<Unit filename="mahasiswa_103012400040.cpp" />
-		<Unit filename="mahasiswa_103012400234.cpp" />
+		<Unit filename="kurir.h" />
+		<Unit filename="kurir_103012400040.cpp" />
+		<Unit filename="kurir_103012400234.cpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main_admin.cpp" />
 		<Unit filename="main_user.cpp" />
-		<Unit filename="matakuliah_103012400040.cpp" />
-		<Unit filename="matakuliah_103012400234.cpp" />
+		<Unit filename="paket.h" />
+		<Unit filename="paket_103012400040.cpp" />
+		<Unit filename="paket_103012400234.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
