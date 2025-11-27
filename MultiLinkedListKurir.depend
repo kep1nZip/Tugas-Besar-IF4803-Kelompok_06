@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1764236688 source:h:\multilinkedkurir\tugas-besar-if4803-kelompok_06\kurir_103012400040.cpp
+	"kurir.h"
+
+1764236746 h:\multilinkedkurir\tugas-besar-if4803-kelompok_06\kurir.h
+	<iostream>
+	"paket.h"
+
+1764235361 h:\multilinkedkurir\tugas-besar-if4803-kelompok_06\paket.h
+	<iostream>
+
+1764236692 source:h:\multilinkedkurir\tugas-besar-if4803-kelompok_06\kurir_103012400234.cpp
+	"kurir.h"
+
+1764237151 source:h:\multilinkedkurir\tugas-besar-if4803-kelompok_06\main_admin.cpp
+	"main.h"
+
+1764237137 h:\multilinkedkurir\tugas-besar-if4803-kelompok_06\main.h
+	<iostream>
+
+1764237168 source:h:\multilinkedkurir\tugas-besar-if4803-kelompok_06\main_user.cpp
+	"main.h"
+
+1764236782 source:h:\multilinkedkurir\tugas-besar-if4803-kelompok_06\paket_103012400040.cpp
+	"paket.h"
+
+1764236785 source:h:\multilinkedkurir\tugas-besar-if4803-kelompok_06\paket_103012400234.cpp
+	"paket.h"
+
+1764237853 source:h:\multilinkedkurir\tugas-besar-if4803-kelompok_06\main.cpp
+	<iostream>
+	"main.h"
+
