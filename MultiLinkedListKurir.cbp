@@ -36,6 +36,7 @@
 		<Unit filename="kurir_103012400040.cpp" />
 		<Unit filename="kurir_103012400234.cpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="main.h" />
 		<Unit filename="main_admin.cpp" />
 		<Unit filename="main_user.cpp" />
 		<Unit filename="paket.h" />

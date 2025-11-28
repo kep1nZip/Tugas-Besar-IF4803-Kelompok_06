@@ -3,9 +3,7 @@
 #include <iostream>
 using namespace std;
 
-/*  =======================
-    ADT CHILD : PAKET
-    ======================= */
+/* ADT CHILD : PAKET (ONE TO MANY)*/
 
 typedef struct elmChild *adrChild;
 
@@ -20,14 +18,41 @@ struct elmChild {
     adrChild next;
 };
 
-adrChild alokasiChild(infotypeChild x);
-void dealokasiChild(adrChild C);
 
-void insertChild(adrChild &firstChild, adrChild C);
-void deleteChild(adrChild &firstChild, int idPaket);
+/*ADT PARENT (KURIR)*/
 
-adrChild findChild(adrChild firstChild, int idPaket);
+typedef struct elmParent *adrParent;
 
-void printChildList(adrChild firstChild);
+struct infotypeParent {
+    int idKurir;
+    char namaKurir[50];
+};
 
+struct elmParent {
+    infotypeParent info;
+    adrParent next;
+    adrParent prev;
+    adrChild firstChild;
+};
+
+struct ListParent {
+    adrParent first;
+    adrParent last;
+};
+
+
+/* Parent (Kurir) */
+void createListParent(ListParent &L);
+adrParent allocateParent(infotypeParent data);
+void insertLastParent(ListParent &L, adrParent P);
+adrParent findParent(ListParent L, int idKurir);
+void deleteParent(ListParent &L, adrParent &P);
+
+/* Child (Paket) */
+adrChild allocateChild(infotypeChild data);
+void insertChild(adrParent P, adrChild C);
+adrChild findChild(adrParent P, int idPaket);
+void deleteChild(adrParent P, adrChild &C);
+
+void printAll(ListParent L);
 #endif /* KURIR_H_INCLUDED */
