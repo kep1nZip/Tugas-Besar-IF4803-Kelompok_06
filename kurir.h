@@ -40,19 +40,30 @@ struct ListParent {
     adrParent last;
 };
 
-
-/* Parent (Kurir) */
+/* BASIC FUNCTION */.
 void createListParent(ListParent &L);
 adrParent allocateParent(infotypeParent data);
-void insertLastParent(ListParent &L, adrParent P);
-adrParent findParent(ListParent L, int idKurir);
-void deleteParent(ListParent &L, adrParent &P);
-
-/* Child (Paket) */
 adrChild allocateChild(infotypeChild data);
+void insertLastParent(ListParent &L, adrParent P);
 void insertChild(adrParent P, adrChild C);
-adrChild findChild(adrParent P, int idPaket);
-void deleteChild(adrParent P, adrChild &C);
 
-void printAll(ListParent L);
+/* MENYISIPKAN DATA PARENT BERDASARKAN SUATU KONDISI */
+void insertParentByCondition(ListParent &L, adrParent P);
+
+/* MENGHAPUS DATA PARENT BERDASARKAN SUATU KONDISI */
+void deleteParentByCondition(ListParent &L, int idKurir);
+
+/* MENYISIPKAN CHILD BERDASARKAN SUATU KONDISI */
+void insertChildByCondition(adrParent P, adrChild C);
+
+/* MENGHAPUS CHILD BERDASARKAN SUATU KONDISI */
+void deleteChildByCondition(adrParent P, int idPaket);
+
+/* KOMPUTASI */
+int countTotalPaket(ListParent L); /* TOTAL PAKET */
+void rataRataPaketPerKurir(ListParent L); /* RATA-RATA PAKET PERKURIR */
+
+/* PROSES PENCARIAN BERDASARKAN SUATU KONDISI (KONDISI = NAMA KURIR) */
+adrParent findKurirByName(ListParent L, const char nama[]);
+
 #endif /* KURIR_H_INCLUDED */
