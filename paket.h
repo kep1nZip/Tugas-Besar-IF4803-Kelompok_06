@@ -6,6 +6,21 @@ using namespace std;
 /* =======================
      ADT PARENT : KURIR
    ======================= */
+typedef struct elmChild *adrChild;
+
+struct infotypeChild{
+  int idpaket;
+  char namaPenerima[50];
+  char alamt[100];
+
+};
+
+struct elmChild{
+    infotypeChild info;
+    adrChild next;
+};
+
+adrChild allocateChild(infotypeChild data);
 
 
 
