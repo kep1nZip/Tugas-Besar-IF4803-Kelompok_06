@@ -40,7 +40,8 @@ struct ListParent {
     adrParent last;
 };
 
-/* BASIC FUNCTION */.
+/* BASIC FUNCTION */
+bool isEmptyParent(ListParent L);
 void createListParent(ListParent &L);
 adrParent allocateParent(infotypeParent data);
 adrChild allocateChild(infotypeChild data);
