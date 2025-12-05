@@ -2,16 +2,17 @@
 #define PAKET_H_INCLUDED
 #include <iostream>
 using namespace std;
+#include "kurir.h"
 
 /* =======================
      ADT PARENT : KURIR
    ======================= */
 typedef struct elmChild *adrChild;
-
-struct infotypeChild{
-  int idpaket;
-  char namaPenerima[50];
-  char alamt[100];
+typedef struct Paket infotypeChild;
+struct Paket {
+  string idpaket;
+  string namaPenerima[50];
+  string alamat[100];
 
 };
 
@@ -20,7 +21,24 @@ struct elmChild{
     adrChild next;
 };
 
-adrChild allocateChild(infotypeChild data);
+// CREATE
+adrChild createElemenChild(infotypeChild x);
+
+// INSERT
+void insertFirstChild(adrParent &p, adrChild c);
+void insertLastChild(adrParent &p, adrChild c);
+void insertAfterChild(adrParent &p, adrChild prec, adrChild c);
+
+// DELETE
+void deleteFirstChild(adrParent &p, adrChild &c);
+void deleteLastChild(adrParent &p, adrChild &c);
+void deleteAfterChild(adrParent &p, adrChild prec, adrChild &c);
+
+// SEARCH
+adrChild findElemenChild(adrParent p, string idpaket);
+
+// VIEW
+void viewChild(adrParent p);
 
 
 
