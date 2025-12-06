@@ -23,6 +23,20 @@ adrParent createElemenParent(infotypeParent data) {
     return P;
 }
 
+/* INSERT FIRST PARENT */
+void insertFirstParent(ListParent &L, adrParent P) {
+    if (isEmptyParent(L)) {
+        L.first = P;
+        L.last = P;
+    } else {
+        P->next = L.first;
+        L.first->prev = P;
+        P->prev = nullptr;
+        L.first = P;
+    }
+}
+
+
 /* INSERT LAST PARENT */
 void insertLastParent(ListParent &L, adrParent P) {
     if (isEmptyParent(L)) {
@@ -31,6 +45,7 @@ void insertLastParent(ListParent &L, adrParent P) {
     } else {
         L.last->next = P;
         P->prev = L.last;
+        P->next = nullptr;
         L.last = P;
     }
 }
