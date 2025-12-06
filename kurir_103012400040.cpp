@@ -125,6 +125,9 @@ void deleteParentByCondition(ListParent &L, int idKurir) {
     delete P;
 }
 
+
+/* =======================================================
+=======
 /* ======================================================
    INSERT CHILD BERDASARKAN KONDISI (URUT ID PAKET)
    ======================================================*/
@@ -214,6 +217,7 @@ int countTotalPaket(ListParent L) {
 }
 
 /* ======================================================
+>>>>>>> ab49ffc11619cc8aaf3876acbbf60769e3b0a190
    RATA-RATA JUMLAH PAKET PER KURIR
    ======================================================*/
 void rataRataPaketPerKurir(ListParent L) {
