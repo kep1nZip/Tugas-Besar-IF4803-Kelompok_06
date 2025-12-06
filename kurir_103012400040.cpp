@@ -110,7 +110,7 @@ void deleteParentByCondition(ListParent &L, int idKurir) {
     delete P;
 }
 
-/* ======================================================
+/* =======================================================
    RATA-RATA JUMLAH PAKET PER KURIR
    ======================================================*/
 void rataRataPaketPerKurir(ListParent L) {

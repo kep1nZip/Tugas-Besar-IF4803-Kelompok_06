@@ -15,4 +15,5 @@ void menuStudiKasus(ListParent &L);
 infotypeParent inputDataKurir();
 infotypeChild inputDataPaket();
 
+
 #endif // MAIN_H_INCLUDED
