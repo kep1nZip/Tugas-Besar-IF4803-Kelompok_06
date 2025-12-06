@@ -43,8 +43,8 @@ struct ListParent {
 /* BASIC FUNCTION */
 bool isEmptyParent(ListParent L);
 void createListParent(ListParent &L);
-adrParent allocateParent(infotypeParent data);
-adrChild allocateChild(infotypeChild data);
+adrParent createElemenParent(infotypeParent data);
+adrChild createElemenChild(infotypeChild data);
 void insertFirststParent(ListParent &L, adrParent P);
 void insertLastParent(ListParent &L, adrParent P);
 void insertAfterParent(ListParent &L, adrParent P, adrParent prec);

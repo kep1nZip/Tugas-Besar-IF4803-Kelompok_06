@@ -14,7 +14,7 @@ void createListParent(ListParent &L) {
 }
 
 /* ALOKASI PARENT*/
-adrParent allocateParent(infotypeParent data) {
+adrParent createElemenParent(infotypeParent data) {
     adrParent P = new elmParent;
     P->info = data;
     P->next = nullptr;
@@ -108,6 +108,94 @@ void deleteParentByCondition(ListParent &L, int idKurir) {
     }
 
     delete P;
+}
+
+/* ======================================================
+   INSERT CHILD BERDASARKAN KONDISI (URUT ID PAKET)
+   ======================================================*/
+void insertChildByCondition(adrParent P, adrChild C) {
+    if (P == nullptr) return;
+
+    adrChild Q = P->firstChild;
+
+    if (Q == nullptr) {
+        P->firstChild = C;
+        C->next = nullptr;
+        return;
+    }
+
+    if (C->info.idPaket < Q->info.idPaket) {
+        C->next = Q;
+        P->firstChild = C;
+        return;
+    }
+
+    while (Q->next != nullptr && Q->next->info.idPaket < C->info.idPaket) {
+        Q = Q->next;
+    }
+
+    C->next = Q->next;
+    Q->next = C;
+}
+
+/* ======================================================
+   DELETE CHILD BERDASARKAN KONDISI (ID PAKET)
+   ======================================================*/
+void deleteChildByCondition(adrParent P, int idPaket) {
+    if (P == nullptr) return;
+
+    adrChild C = P->firstChild;
+
+    if (C == nullptr) {
+        cout << "Tidak ada paket pada kurir ini.\n";
+        return;
+    }
+
+    if (C->info.idPaket == idPaket) {
+        P->firstChild = C->next;
+        delete C;
+        cout << "Paket " << idPaket << " berhasil dihapus.\n";
+        return;
+    }
+
+    adrChild prev = C;
+    C = C->next;
+
+    while (C != nullptr && C->info.idPaket != idPaket) {
+        prev = C;
+        C = C->next;
+    }
+
+    if (C == nullptr) {
+        cout << "Paket dengan ID " << idPaket << " tidak ditemukan.\n";
+        return;
+    }
+
+    prev->next = C->next;
+    delete C;
+
+    cout << "Paket " << idPaket << " berhasil dihapus.\n";
+}
+
+/* ======================================================
+   TOTAL PAKET (SEMUA KURIR)
+   ======================================================*/
+int countTotalPaket(ListParent L) {
+    int total = 0;
+
+    adrParent P = L.first;
+    while (P != nullptr) {
+        adrChild C = P->firstChild;
+
+        while (C != nullptr) {
+            total++;
+            C = C->next;
+        }
+
+        P = P->next;
+    }
+
+    return total;
 }
 
 /* ======================================================
