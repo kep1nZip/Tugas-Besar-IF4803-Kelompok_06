@@ -5,15 +5,23 @@
 #include "paket.h"
 using namespace std;
 
+
 /* MENU ADMIN */
 void menuAdmin(ListParent &L);
+
 
 /* MENU USER/STUDI KASUS */
 void menuStudiKasus(ListParent &L);
 
+
 /* INPUT */
 infotypeParent inputDataKurir();
 infotypeChild inputDataPaket();
+
+
+// Helper menu declarations
+void menuParent(ListParent &L);
+void menuChild(ListParent &L);
 
 
 #endif // MAIN_H_INCLUDED

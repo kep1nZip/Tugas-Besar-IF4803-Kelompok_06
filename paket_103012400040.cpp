@@ -47,19 +47,20 @@ void deleteAfterChild(adrParent &p, adrChild prec, adrChild &c) {
 
     c = prec->next;
     prec->next = c->next;
+    c->next = nullptr;
 }
 
 /* ======================================================
    FIND ELEMENT CHILD
    ======================================================*/
 
-adrChild findElemenChild(adrParent p, string idpaket) {
+adrChild findElemenChild(adrParent p, int idPaket) {
     if (p == nullptr) return nullptr;
 
     adrChild q = p->firstChild;
 
     while (q != nullptr) {
-        if (q->info.idpaket == idpaket) {
+        if (q->info.idPaket == idPaket) {
             return q;
         }
         q = q->next;
@@ -87,7 +88,7 @@ void viewChild(adrParent p) {
 
     cout << "Daftar Paket:\n";
     while (c != nullptr) {
-        cout << "- ID Paket   : " << c->info.idpaket << endl;
+        cout << "- ID Paket   : " << c->info.idPaket << endl;
         cout << "  Penerima   : " << c->info.namaPenerima << endl;
         cout << "  Alamat     : " << c->info.alamat << endl;
         cout << "-------------------------------------\n";
