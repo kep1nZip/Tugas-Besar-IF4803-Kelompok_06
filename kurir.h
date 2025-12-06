@@ -44,14 +44,13 @@ struct ListParent {
 bool isEmptyParent(ListParent L);
 void createListParent(ListParent &L);
 adrParent createElemenParent(infotypeParent data);
-adrChild createElemenChild(infotypeChild data);
-void insertFirststParent(ListParent &L, adrParent P);
+void insertFirstParent(ListParent &L, adrParent P);
 void insertLastParent(ListParent &L, adrParent P);
-void insertAfterParent(ListParent &L, adrParent P, adrParent prec);
-void insertChild(adrParent P, adrChild C);
-void deleteFirstParent(ListParent &L, adrParent P);
-void deleteLastParent(ListParent &L, adrParent P);
-void deleteAfterParent(ListParent &L, adrParent P, adrParent prec);
+void insertAfterParent(ListParent &L, adrParent prec, adrParent P);
+
+void deleteFirstParent(ListParent &L, adrParent &P);
+void deleteLastParent(ListParent &L, adrParent &P);
+void deleteAfterParent(ListParent &L, adrParent prec, adrParent &P);
 
 /* MENYISIPKAN DATA PARENT BERDASARKAN SUATU KONDISI */
 void insertParentByCondition(ListParent &L, adrParent P);

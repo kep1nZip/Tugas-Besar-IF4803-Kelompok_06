@@ -1,4 +1,7 @@
 #include "paket.h"
+#include <iostream>
+
+using namespace std;
 
 
 adrChild createElemenChild(infotypeChild x){
@@ -26,7 +29,16 @@ void insertLastChild(adrParent &p, adrChild c){
         q->next = c;
     }
 }
-void insertAfterChild(adrParent &p, adrChild prec, adrChild c);
+void insertAfterChild(adrParent &p, adrChild prec, adrChild c){
+    if (prec == NULL) { 
+    
+    c->next = p->firstChild;
+     p->firstChild = c; 
+    } else { 
+        c->next = prec->nextC; 
+        prec->next = c; 
+        } 
+}
 
 // DELETE
 void deleteFirstChild(adrParent &p, adrChild &c){
