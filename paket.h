@@ -11,8 +11,8 @@ typedef struct elmChild *adrChild;
 typedef struct Paket infotypeChild;
 struct Paket {
   string idpaket;
-  string namaPenerima[50];
-  string alamat[100];
+  char namaPenerima[50];
+  char alamat[100];
 
 };
 
