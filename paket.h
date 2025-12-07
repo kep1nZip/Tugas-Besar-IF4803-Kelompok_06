@@ -25,4 +25,7 @@ adrChild findElemenChild(adrParent p, int idPaket);
 // VIEW
 void viewChild(adrParent p);
 
-#endif
+
+
+
+#endif /* PAKET_H_INCLUDED */
