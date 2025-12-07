@@ -6,6 +6,7 @@
 #include "kurir.h"
 using namespace std;
 
+
 // CREATE
 adrChild createElemenChild(infotypeChild x);
 
@@ -24,8 +25,6 @@ adrChild findElemenChild(adrParent p, int idPaket);
 
 // VIEW
 void viewChild(adrParent p);
-
-
 
 
 #endif /* PAKET_H_INCLUDED */

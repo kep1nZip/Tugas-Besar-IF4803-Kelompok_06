@@ -29,6 +29,6 @@ void menuStudiKasus(ListParent &L) {
 
         } else if (option == 2) {
             rataRataPaketPerKurir(L);
-        }
-    }
+        }
+    }
 }
