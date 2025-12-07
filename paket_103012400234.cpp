@@ -1,4 +1,6 @@
 #include "paket.h"
+#include <iostream>
+using namespace std;
 
 #include <iostream>
 
@@ -8,25 +10,25 @@ using namespace std;
 adrChild createElemenChild(infotypeChild x){
     adrChild c = new elmChild;
     c->info = x;
-    c->next = NULL;
+    c->next = nullptr;
     return c;
 }
+
+/*INSERT FIRST*/
 void insertFirstChild(adrParent &p, adrChild c){
    c->next = p->firstChild;
    p->firstChild = c;
-
-
 }
+
+/*INSERT LAST*/
 void insertLastChild(adrParent &p, adrChild c){
-    if (p->firstChild == NULL){
+    if (p->firstChild == nullptr){
         p->firstChild = c;
-        
     }else{
         adrChild q = p->firstChild;
-        while(q->next != NULL){
+        while(q->next != nullptr){
             q = q->next;
         }
-
         q->next = c;
     }
 }
