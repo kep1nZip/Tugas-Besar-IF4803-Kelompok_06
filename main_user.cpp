@@ -1,29 +1,34 @@
+#include <iostream>
+#include <string>
 #include "main.h"
 
-void menuUser(){
-    int option=-99;
+void menuStudiKasus(ListParent &L) {
+    int option = -99;
+
     while (option != 0) {
-        system("cls");
-        cout << "============ Menu ============ " << endl;
-        cout << "|| 1. studi case 1          ||" << endl;
-        cout << "|| 2. studi case 2           ||" << endl;
-        cout << "|| .....dst                 ||" << endl;
-        cout << "|| 0. back                  ||" << endl;
-        cout << "============================== " << endl;
-        cout << "Choose your option : ";
+        cout << "========= Menu Studi Kasus =========\n";
+        cout << "1. Studi Kasus 1 (Tampilkan paket pada bulan tertentu)\n";
+        cout << "2. Studi Kasus 2 (Sales dengan paket terbanyak)\n";
+        cout << "0. Back\n";
+        cout << "=====================================\n";
+        cout << "Choose option: ";
         cin >> option;
-        switch(option) {
-           case 1  :
-              cout << "you choose option 1" << endl;
-              // write your code here
 
-              break;
-           case 2  :
-              cout << "you choose option 2" << endl;
-              // write your code here
+        if (option == 1) {
+            char nama[50];
+            cout << "Nama kurir: ";
+            cin >> nama;
 
-              break;
-            // continue for another case here
+            adrParent P = findKurirByName(L, nama);
+            if (P == nullptr) {
+                cout << "Kurir tidak ditemukan.\n";
+                continue;
+            }
+
+            viewChild(P);
+
+        } else if (option == 2) {
+            rataRataPaketPerKurir(L);
         }
     }
 }

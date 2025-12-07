@@ -1,10 +1,12 @@
 #ifndef PAKET_H_INCLUDED
 #define PAKET_H_INCLUDED
-#include <iostream>
-using namespace std;
-#include "kurir.h"
 
-//create Child
+#include <iostream>
+#include <string>
+#include "kurir.h"
+using namespace std;
+
+// CREATE
 adrChild createElemenChild(infotypeChild x);
 
 // INSERT
