@@ -2,7 +2,6 @@
 #include <iostream>
 using namespace std;
 
-
 adrChild createElemenChild(infotypeChild x){
     adrChild c = new elmChild;
     c->info = x;
@@ -10,13 +9,13 @@ adrChild createElemenChild(infotypeChild x){
     return c;
 }
 
-/*INSERT FIRST*/
+//INSERT FIRST
 void insertFirstChild(adrParent &p, adrChild c){
    c->next = p->firstChild;
    p->firstChild = c;
 }
 
-/*INSERT LAST*/
+//INSERT LAST
 void insertLastChild(adrParent &p, adrChild c){
     if (p->firstChild == nullptr){
         p->firstChild = c;
@@ -30,22 +29,28 @@ void insertLastChild(adrParent &p, adrChild c){
 }
 void insertAfterChild(adrParent &p, adrChild prec, adrChild c){
     if (prec == nullptr) {
-        insertFirstChild(p, c);
+        c->next = p->firstChild;
+        p->firstChild = c;
     } else {
         c->next = prec->next;
         prec->next = c;
     }
 }
 
-/*DELETE FIRST*/
+//DELETE FIRST
 void deleteFirstChild(adrParent &p, adrChild &c){
-    if(p->firstChild == nullptr){
+    if (p->firstChild == nullptr){
         c = nullptr;
+    }
+    else if (p->firstChild->next == nullptr){
+        c = p->firstChild;
+        p->firstChild = nullptr;
     }else{
         c = p->firstChild;
         p->firstChild = c->next;
         c->next = nullptr;
 
-    }
+    }
 
 }
+    
