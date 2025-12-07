@@ -50,6 +50,8 @@ void menuParent(ListParent &L) {
         cout << "3. Insert Parent by ID (sorted)\n";
         cout << "4. Delete Parent by ID\n";
         cout << "5. View Parents\n";
+        cout << "6. View Parents + Child\n";
+        cout << "7. Kurir dengan Paket Terbanyak\n";
         cout << "0. Back\n";
         cout << "===================================\n";
         cout << "Choose option: ";
@@ -77,13 +79,13 @@ void menuParent(ListParent &L) {
             deleteParentByCondition(L, id);
 
         } else if (option == 5) {
-            adrParent P = L.first;
-            cout << "=== DATA KURIR ===\n";
-            while (P != nullptr) {
-                cout << "ID: " << P->info.idKurir
-                     << " | Nama: " << P->info.namaKurir << endl;
-                P = P->next;
-            }
+            viewAllKurir(L);
+
+        } else if (option == 6) {
+             viewKurirDetail(L);
+
+        } else if (option == 7) {
+             viewKurirWithMostPaket(L);
         }
     }
 }
@@ -102,7 +104,7 @@ void menuChild(ListParent &L) {
         cin >> option;
 
         if (option == 1) {
-            char nama[50];
+            string nama;
             cout << "Masukkan nama kurir: ";
             cin >> nama;
 
@@ -117,7 +119,7 @@ void menuChild(ListParent &L) {
             insertChild(P, C);
 
         } else if (option == 2) {
-            char nama[50];
+            string nama;
             int idPaket;
             cout << "Nama kurir: ";
             cin >> nama;
@@ -133,7 +135,7 @@ void menuChild(ListParent &L) {
             deleteChildByCondition(P, idPaket);
 
         } else if (option == 3) {
-            char nama[50];
+            string nama;
             cout << "Nama kurir: ";
             cin >> nama;
 

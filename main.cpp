@@ -2,32 +2,53 @@
 #include "main.h"
 using namespace std;
 
-int main() {
-    ListParent L;
-    createListParent(L);
+// deklarasi supaya dikenali compiler
+void loadDummyDataKurir(ListParent &L);
+void menuAdmin(ListParent &L);
+void menuStudiKasus(ListParent &L);
 
-    int option = -99;
-    while (option != 0) {
-        cout << "============ Menu ============ \n";
-        cout << "|| 1. Admin                 ||\n";
-        cout << "|| 2. User                  ||\n";
-        cout << "|| 0. Exit                  ||\n";
-        cout << "============================== \n";
-        cout << "Choose your option: ";
+int main() {
+    ListParent listAdmin;
+    ListParent listUser;
+
+    createListParent(listAdmin);
+    createListParent(listUser);
+
+    /*DUMMY ONLYY!!!!!*/
+    loadDummyDataKurir(listUser);
+    loadDummyDataKurir(listAdmin);
+
+
+    bool dummyLoaded = false;
+
+    int option = 0;
+    while (option != 3) {
+        cout << "\n================ MENU UTAMA ================\n";
+        cout << "1. Menu Admin\n";
+        cout << "2. Menu User (Studi Kasus)\n";
+        cout << "3. Exit\n";
+        cout << "============================================\n";
+        cout << "Choose option: ";
         cin >> option;
 
-        switch (option) {
-            case 1:
-                menuAdmin(L);
-                break;
-            case 2:
-                menuStudiKasus(L);
-                break;
-            case 0:
-                cout << "Program selesai.\n";
-                break;
-            default:
-                cout << "Option invalid.\n";
+        if (option == 1) {
+
+            menuAdmin(listAdmin);
+
+        } else if (option == 2) {
+            if (!dummyLoaded) {
+                loadDummyDataKurir(listUser);
+                loadDummyDataKurir(listAdmin);
+                dummyLoaded = true;
+            }
+
+            menuStudiKasus(listUser);
+
+        } else if (option == 3) {
+            cout << "Program selesai.\n";
+
+        } else {
+            cout << "[!] Option invalid.\n";
         }
     }
 
