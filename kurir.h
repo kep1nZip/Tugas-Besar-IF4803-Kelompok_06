@@ -1,6 +1,7 @@
 #ifndef KURIR_H_INCLUDED
 #define KURIR_H_INCLUDED
 #include <iostream>
+#include <string>
 using namespace std;
 
 /* ADT CHILD : PAKET (ONE TO MANY)*/
@@ -9,8 +10,8 @@ typedef struct elmChild *adrChild;
 
 struct infotypeChild {
     int idPaket;
-    char namaPenerima[50];
-    char alamat[100];
+    string namaPenerima;
+    string alamat;
 };
 
 struct elmChild {
@@ -25,7 +26,7 @@ typedef struct elmParent *adrParent;
 
 struct infotypeParent {
     int idKurir;
-    char namaKurir[50];
+    string namaKurir;
 };
 
 struct elmParent {
@@ -70,6 +71,13 @@ int countTotalPaket(ListParent L); /* TOTAL PAKET */
 void rataRataPaketPerKurir(ListParent L); /* RATA-RATA PAKET PERKURIR */
 
 /* PROSES PENCARIAN BERDASARKAN SUATU KONDISI (KONDISI = NAMA KURIR) */
-adrParent findKurirByName(ListParent L, const char nama[]);
+adrParent findKurirByName(ListParent L, const string &nama);
+
+/* LIHAT/VIEW KURIR BESERTA DETAIL */
+void viewAllKurir(ListParent L);
+void viewKurirDetail(ListParent L);
+
+/* LIHAT/VIEW KURIR DENGAN PAKET TERBANYAK */
+void viewKurirWithMostPaket(ListParent L);
 
 #endif /* KURIR_H_INCLUDED */

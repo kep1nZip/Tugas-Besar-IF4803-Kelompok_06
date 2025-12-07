@@ -217,8 +217,7 @@ int countTotalPaket(ListParent L) {
 }
 
 /* ======================================================
->>>>>>> ab49ffc11619cc8aaf3876acbbf60769e3b0a190
-   RATA-RATA JUMLAH PAKET PER KURIR
+    RATA-RATA JUMLAH PAKET PER KURIR
    ======================================================*/
 void rataRataPaketPerKurir(ListParent L) {
     if (isEmptyParent(L)) {
@@ -248,4 +247,102 @@ void rataRataPaketPerKurir(ListParent L) {
     }
 
     cout << "Rata-rata paket per kurir: " << rata << endl;
+}
+
+/* ======================================================
+   LIHAT SEMUA KURIR
+   ======================================================*/
+
+void viewAllKurir(ListParent L) {
+    if (isEmptyParent(L)) {
+        cout << "Tidak ada data kurir.\n";
+        return;
+    }
+
+    adrParent P = L.first;
+    cout << "\n===== DAFTAR KURIR =====\n";
+
+    while (P != nullptr) {
+        cout << "ID: " << P->info.idKurir
+             << " | Nama: " << P->info.namaKurir << endl;
+        P = P->next;
+    }
+
+    cout << "========================\n";
+}
+
+/* ======================================================
+   LIHAT SEMUA KURIR + DETAIL/PAKETNYA
+   ======================================================*/
+void viewKurirDetail(ListParent L) {
+    if (isEmptyParent(L)) {
+        cout << "List kurir kosong.\n";
+        return;
+    }
+
+    adrParent P = L.first;
+
+    cout << "\n======= DETAIL SEMUA KURIR =======\n";
+
+    while (P != nullptr) {
+        cout << "\nKurir: " << P->info.namaKurir
+             << " (ID: " << P->info.idKurir << ")\n";
+
+        adrChild C = P->firstChild;
+
+        if (C == nullptr) {
+            cout << "   Tidak ada paket.\n";
+        } else {
+            cout << "   Daftar Paket:\n";
+            while (C != nullptr) {
+                cout << "     - ID Paket: " << C->info.idPaket
+                     << " | Penerima: " << C->info.namaPenerima
+                     << " | Alamat: " << C->info.alamat << endl;
+                C = C->next;
+            }
+        }
+
+        cout << "--------------------------------\n";
+        P = P->next;
+    }
+}
+
+/* ======================================================
+   LIHAT KURIR DENGAN PAKET TERBANYAK
+   ======================================================*/
+
+void viewKurirWithMostPaket(ListParent L) {
+    if (isEmptyParent(L)) {
+        cout << "List kurir kosong.\n";
+        return;
+    }
+
+    adrParent P = L.first;
+    adrParent maxKurir = nullptr;
+    int maxPaket = 0;
+
+    while (P != nullptr) {
+        int count = 0;
+        adrChild C = P->firstChild;
+
+        while (C != nullptr) {
+            count++;
+            C = C->next;
+        }
+
+        if (count > maxPaket) {
+            maxPaket = count;
+            maxKurir = P;
+        }
+
+        P = P->next;
+    }
+
+    cout << "\n=== KURIR DENGAN PAKET TERBANYAK ===\n";
+    if (maxKurir != nullptr) {
+        cout << "Nama: " << maxKurir->info.namaKurir << endl;
+        cout << "ID   : " << maxKurir->info.idKurir << endl;
+        cout << "Total Paket: " << maxPaket << endl;
+    }
+    cout << "====================================\n";
 }
