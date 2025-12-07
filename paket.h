@@ -4,24 +4,7 @@
 using namespace std;
 #include "kurir.h"
 
-/* =======================
-     ADT PARENT : KURIR
-   ======================= */
-typedef struct elmChild *adrChild;
-typedef struct Paket infotypeChild;
-struct Paket {
-  string idpaket;
-  char namaPenerima[50];
-  char alamat[100];
-
-};
-
-struct elmChild{
-    infotypeChild info;
-    adrChild next;
-};
-
-// CREATE
+//create Child
 adrChild createElemenChild(infotypeChild x);
 
 // INSERT
@@ -35,10 +18,11 @@ void deleteLastChild(adrParent &p, adrChild &c);
 void deleteAfterChild(adrParent &p, adrChild prec, adrChild &c);
 
 // SEARCH
-adrChild findElemenChild(adrParent p, string idpaket);
+adrChild findElemenChild(adrParent p, int idPaket);
 
 // VIEW
 void viewChild(adrParent p);
+
 
 
 
