@@ -71,14 +71,13 @@ void deleteLastParent(ListParent &L, adrParent &P) {
         L.last = nullptr;
     }
     else {
+
+        P = L.last;
         L.last = L.last->prev;
         L.last->next = nullptr;
+        P->prev = nullptr;
     }
-
-    P->next = nullptr;
-    P->prev = nullptr;
 }
-
 
 void deleteAfterParent(ListParent &L, adrParent prec, adrParent &P) {
     if (prec == nullptr || prec->next == nullptr) {
@@ -103,11 +102,11 @@ void deleteAfterParent(ListParent &L, adrParent prec, adrParent &P) {
     P->prev = nullptr;
 }
 
-adrParent findKurirByName(ListParent L, const char nama[]){
+adrParent findKurirByName(ListParent L, const string &nama){
     adrParent P = L.first;
 
     while (P != nullptr) {
-        if (strcmp(P->info.namaKurir, nama) == 0) {
+        if (P->info.namaKurir == nama) {
             return P;   // ketemu
         }
         P = P->next;
