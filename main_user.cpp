@@ -7,8 +7,8 @@ void menuStudiKasus(ListParent &L) {
 
     while (option != 0) {
         cout << "========= Menu Studi Kasus =========\n";
-        cout << "1. Studi Kasus 1 (Tampilkan paket pada bulan tertentu)\n";
-        cout << "2. Studi Kasus 2 (Sales dengan paket terbanyak)\n";
+        cout << "1. Studi Kasus 1 (Tampilkan paket pada kurir tertentu)\n";
+        cout << "2. Studi Kasus 2 (Rata-rata paket perkurir)\n";
         cout << "0. Back\n";
         cout << "=====================================\n";
         cout << "Choose option: ";

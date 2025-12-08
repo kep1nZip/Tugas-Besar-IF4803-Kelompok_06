@@ -60,6 +60,9 @@ void insertParentByCondition(ListParent &L, adrParent P);
 /* MENGHAPUS DATA PARENT BERDASARKAN SUATU KONDISI */
 void deleteParentByCondition(ListParent &L, int idKurir);
 
+/* MENYISIPKAN CHILD (INSERT LAST CHILD) */
+void insertChild(adrParent P, adrChild C);
+
 /* MENYISIPKAN CHILD BERDASARKAN SUATU KONDISI */
 void insertChildByCondition(adrParent P, adrChild C);
 
