@@ -12,6 +12,7 @@ struct infotypeChild {
     int idPaket;
     string namaPenerima;
     string alamat;
+    int berat;
 };
 
 struct elmChild {
@@ -72,6 +73,8 @@ void deleteChildByCondition(adrParent P, int idPaket);
 /* KOMPUTASI */
 int countTotalPaket(ListParent L); /* TOTAL PAKET */
 void rataRataPaketPerKurir(ListParent L); /* RATA-RATA PAKET PERKURIR */
+void rataRataBeratPaket(ListParent L); /* RATA-RATA BERAT PAKET */
+void countTotalBeratPaket(ListParent L); /* TOTAL BERAT */
 
 /* PROSES PENCARIAN BERDASARKAN SUATU KONDISI (KONDISI = NAMA KURIR) */
 adrParent findKurirByName(ListParent L, const string &nama);
