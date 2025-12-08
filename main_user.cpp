@@ -9,6 +9,9 @@ void menuStudiKasus(ListParent &L) {
         cout << "========= Menu Studi Kasus =========\n";
         cout << "1. Studi Kasus 1 (Tampilkan paket pada kurir tertentu)\n";
         cout << "2. Studi Kasus 2 (Rata-rata paket perkurir)\n";
+        cout << "3. Studi Kasus 3 (Total Paket)\n";
+        cout << "4. Studi Kasus 4 (Rata-rata berat paket)\n";
+        cout << "5. Studi Kasus 5 (Total berat paket perkurir)\n";
         cout << "0. Back\n";
         cout << "=====================================\n";
         cout << "Choose option: ";
@@ -29,6 +32,12 @@ void menuStudiKasus(ListParent &L) {
 
         } else if (option == 2) {
             rataRataPaketPerKurir(L);
+        } else if (option == 3) {
+            countTotalPaket(L);
+        } else if (option == 4){
+            rataRataBeratPaket(L);
+        } else if (option == 5){
+            countTotalBeratPaket(L);
         }
     }
 }

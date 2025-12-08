@@ -213,7 +213,7 @@ int countTotalPaket(ListParent L) {
         P = P->next;
     }
 
-    return total;
+    cout << "Total Paket: " << total << endl;
 }
 
 /* ======================================================
