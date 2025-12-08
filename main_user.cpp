@@ -81,5 +81,5 @@ void loadDummyDataKurir(ListParent &L) {
     insertChild(D, createElemenChild({210, "Putra", "Semarang"}));
 
     /* ====== DUMMY PAKET UNTUK KURIR E ====== */
-    insertChild(E, createElemenChild({211, "Nana", "Bogor"}));
+    insertChild(E, createElemenChild({211, "Nana", "Bogor"}));
 }

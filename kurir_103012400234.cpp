@@ -114,3 +114,10 @@ adrParent findKurirByName(ListParent L, const string &nama){
 
     return nullptr; // tidak ditemukan
 }
+ void rataRataBeratPaket(ListParent L){
+
+ }
+
+ void countTotalBeratPaket(ListParent L){
+
+ }
