@@ -52,3 +52,9 @@ void deleteFirstChild(adrParent &p, adrChild &c) {
         c->next = nullptr;
     }
 }
+void countTotalBeratPaket(ListParent L){
+
+}
+void rataRataBeratPaket(ListParent L){
+    
+}
