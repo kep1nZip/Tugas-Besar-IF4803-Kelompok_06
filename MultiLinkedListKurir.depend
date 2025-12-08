@@ -47,3 +47,51 @@
 	<iostream>
 	"main.h"
 
+1765174985 source:c:\kurir-topik6\tugas-besar-if4803-kelompok_06\tugas-besar-if4803-kelompok_06\kurir_103012400040.cpp
+	"kurir.h"
+	<cstring>
+	<iostream>
+
+1765176166 c:\kurir-topik6\tugas-besar-if4803-kelompok_06\tugas-besar-if4803-kelompok_06\kurir.h
+	<iostream>
+	<string>
+
+1765174985 source:c:\kurir-topik6\tugas-besar-if4803-kelompok_06\tugas-besar-if4803-kelompok_06\main.cpp
+	<iostream>
+	"main.h"
+
+1765174985 c:\kurir-topik6\tugas-besar-if4803-kelompok_06\tugas-besar-if4803-kelompok_06\main.h
+	<iostream>
+	"kurir.h"
+	"paket.h"
+
+1765174985 c:\kurir-topik6\tugas-besar-if4803-kelompok_06\tugas-besar-if4803-kelompok_06\paket.h
+	<iostream>
+	<string>
+	"kurir.h"
+
+1765174985 source:c:\kurir-topik6\tugas-besar-if4803-kelompok_06\tugas-besar-if4803-kelompok_06\paket_103012400040.cpp
+	"paket.h"
+	<iostream>
+
+1765175274 source:c:\kurir-topik6\tugas-besar-if4803-kelompok_06\tugas-besar-if4803-kelompok_06\paket_103012400234.cpp
+	"paket.h"
+	<iostream>
+
+1765174985 source:c:\kurir-topik6\tugas-besar-if4803-kelompok_06\tugas-besar-if4803-kelompok_06\main_admin.cpp
+	<iostream>
+	<string>
+	"kurir.h"
+	"paket.h"
+	"main.h"
+
+1765176662 source:c:\kurir-topik6\tugas-besar-if4803-kelompok_06\tugas-besar-if4803-kelompok_06\main_user.cpp
+	<iostream>
+	<string>
+	"main.h"
+
+1765176350 source:c:\kurir-topik6\tugas-besar-if4803-kelompok_06\tugas-besar-if4803-kelompok_06\kurir_103012400234.cpp
+	"kurir.h"
+	<cstring>
+	<iostream>
+
