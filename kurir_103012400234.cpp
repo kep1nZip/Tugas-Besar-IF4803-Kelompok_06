@@ -114,3 +114,45 @@ adrParent findKurirByName(ListParent L, const string &nama){
 
     return nullptr; // tidak ditemukan
 }
+
+void countTotalBeratPaket(ListParent L){
+    int totalBerat = 0;
+    adrParent p = L.first;
+    while (p != NULL) {
+        adrChild c = p->firstChild;
+        while (c != NULL) {
+            totalBerat += c->info.idPaket;  
+        }
+        p = p->next;
+    }
+    cout << "Total berat semua paket : " << totalBerat << endl;
+}
+
+
+
+void rataRataBeratPaket(ListParent L){
+    int totalBerat = 0;
+    int jumlahPaket = 0;
+    float rata = 0; 
+
+    adrParent p = L.first;
+    while (p != NULL) {
+        adrChild c = p->firstChild;
+        while (c != NULL) {
+            totalBerat += c->info.idPaket;
+            jumlahPaket++;
+            c = c->next;
+        }
+        p = p->next;
+    }
+
+    if (jumlahPaket == 0) {
+        cout << "Tidak ada paket." << endl;
+        return;
+    }
+
+    rata = (float) totalBerat / jumlahPaket;   
+    cout << "Rata-rata : " << rata << endl;
+
+    
+}
