@@ -1,6 +1,7 @@
 #ifndef KURIR_H_INCLUDED
 #define KURIR_H_INCLUDED
 #include <iostream>
+#include <string>
 using namespace std;
 
 /* ADT CHILD : PAKET (ONE TO MANY)*/
@@ -9,8 +10,9 @@ typedef struct elmChild *adrChild;
 
 struct infotypeChild {
     int idPaket;
-    char namaPenerima[50];
-    char alamat[100];
+    string namaPenerima;
+    string alamat;
+    int berat;
 };
 
 struct elmChild {
@@ -25,7 +27,7 @@ typedef struct elmParent *adrParent;
 
 struct infotypeParent {
     int idKurir;
-    char namaKurir[50];
+    string namaKurir;
 };
 
 struct elmParent {
@@ -44,11 +46,11 @@ struct ListParent {
 bool isEmptyParent(ListParent L);
 void createListParent(ListParent &L);
 adrParent createElemenParent(infotypeParent data);
-adrChild createElemenChild(infotypeChild data);
+
 void insertFirstParent(ListParent &L, adrParent P);
 void insertLastParent(ListParent &L, adrParent P);
 void insertAfterParent(ListParent &L, adrParent prec, adrParent P);
-void insertChild(adrParent P, adrChild C);
+
 void deleteFirstParent(ListParent &L, adrParent &P);
 void deleteLastParent(ListParent &L, adrParent &P);
 void deleteAfterParent(ListParent &L, adrParent prec, adrParent &P);
@@ -59,6 +61,9 @@ void insertParentByCondition(ListParent &L, adrParent P);
 /* MENGHAPUS DATA PARENT BERDASARKAN SUATU KONDISI */
 void deleteParentByCondition(ListParent &L, int idKurir);
 
+/* MENYISIPKAN CHILD (INSERT LAST CHILD) */
+void insertChild(adrParent P, adrChild C);
+
 /* MENYISIPKAN CHILD BERDASARKAN SUATU KONDISI */
 void insertChildByCondition(adrParent P, adrChild C);
 
@@ -68,8 +73,17 @@ void deleteChildByCondition(adrParent P, int idPaket);
 /* KOMPUTASI */
 int countTotalPaket(ListParent L); /* TOTAL PAKET */
 void rataRataPaketPerKurir(ListParent L); /* RATA-RATA PAKET PERKURIR */
+void rataRataBeratPaket(ListParent L); /* RATA-RATA BERAT PAKET */
+void countTotalBeratPaket(ListParent L); /* TOTAL BERAT */
 
 /* PROSES PENCARIAN BERDASARKAN SUATU KONDISI (KONDISI = NAMA KURIR) */
-adrParent findKurirByName(ListParent L, const char nama[]);
+adrParent findKurirByName(ListParent L, const string &nama);
+
+/* LIHAT/VIEW KURIR BESERTA DETAIL */
+void viewAllKurir(ListParent L);
+void viewKurirDetail(ListParent L);
+
+/* LIHAT/VIEW KURIR DENGAN PAKET TERBANYAK */
+void viewKurirWithMostPaket(ListParent L);
 
 #endif /* KURIR_H_INCLUDED */
