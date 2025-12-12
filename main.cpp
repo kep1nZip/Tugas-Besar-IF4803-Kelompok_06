@@ -16,10 +16,6 @@ int main() {
 
     /*DUMMY ONLYY!!!!!*/
     loadDummyDataKurir(listUser);
-    loadDummyDataKurir(listAdmin);
-
-
-    bool dummyLoaded = false;
 
     int option = 0;
     while (option != 3) {
@@ -32,21 +28,12 @@ int main() {
         cin >> option;
 
         if (option == 1) {
-
             menuAdmin(listAdmin);
 
         } else if (option == 2) {
-            if (!dummyLoaded) {
-                loadDummyDataKurir(listUser);
-                loadDummyDataKurir(listAdmin);
-                dummyLoaded = true;
-            }
-
             menuStudiKasus(listUser);
-
         } else if (option == 3) {
             cout << "Program selesai.\n";
-
         } else {
             cout << "[!] Option invalid.\n";
         }

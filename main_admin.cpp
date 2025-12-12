@@ -166,12 +166,12 @@ infotypeChild inputDataPaket() {
 
     cout << "ID Paket        : ";
     cin >> x.idPaket;
-
     cout << "Nama Penerima   : ";
     cin >> x.namaPenerima;
-
     cout << "Alamat          : ";
     cin >> x.alamat;
+    cout << "Berat (kg)       : ";
+    cin >> x.berat;
 
     return x;
 }

@@ -12,7 +12,7 @@ struct infotypeChild {
     int idPaket;
     string namaPenerima;
     string alamat;
-    int berat;
+    float berat;
 };
 
 struct elmChild {

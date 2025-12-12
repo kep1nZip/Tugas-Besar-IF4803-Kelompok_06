@@ -63,23 +63,23 @@ void loadDummyDataKurir(ListParent &L) {
     insertLastParent(L, E);
 
     /* ====== DUMMY PAKET UNTUK KURIR A ====== */
-    insertChild(A, createElemenChild({201, "Asep", "Bandung"}));
-    insertChild(A, createElemenChild({202, "Lia", "Jakarta"}));
-    insertChild(A, createElemenChild({203, "Romi", "Surabaya"}));
+    insertChild(A, createElemenChild({201, "Asep", "Bandung", 2.5}));
+    insertChild(A, createElemenChild({202, "Lia", "Jakarta", 1.2}));
+    insertChild(A, createElemenChild({203, "Romi", "Surabaya", 3.0}));
 
     /* ====== DUMMY PAKET UNTUK KURIR B ====== */
-    insertChild(B, createElemenChild({204, "Tono", "Depok"}));
-    insertChild(B, createElemenChild({205, "Bunga", "Cimahi"}));
-    insertChild(B, createElemenChild({206, "Kevin", "Bekasi"}));
+    insertChild(B, createElemenChild({204, "Tono", "Depok", 1.8}));
+    insertChild(B, createElemenChild({205, "Bunga", "Cimahi", 2.0}));
+    insertChild(B, createElemenChild({206, "Kevin", "Bekasi", 4.1}));
 
     /* ====== DUMMY PAKET UNTUK KURIR C ====== */
-    insertChild(C, createElemenChild({207, "Dika", "Malang"}));
-    insertChild(C, createElemenChild({208, "Sari", "Solo"}));
+    insertChild(C, createElemenChild({207, "Dika", "Malang", 0.9}));
+    insertChild(C, createElemenChild({208, "Sari", "Solo", 1.7}));
 
     /* ====== DUMMY PAKET UNTUK KURIR D ====== */
-    insertChild(D, createElemenChild({209, "Rina", "Jogja"}));
-    insertChild(D, createElemenChild({210, "Putra", "Semarang"}));
+    insertChild(D, createElemenChild({209, "Rina", "Jogja", 3.4}));
+    insertChild(D, createElemenChild({210, "Putra", "Semarang", 2.2}));
 
     /* ====== DUMMY PAKET UNTUK KURIR E ====== */
-    insertChild(E, createElemenChild({211, "Nana", "Bogor"}));
+    insertChild(E, createElemenChild({211, "Nana", "Bogor", 1.1}));
 }
