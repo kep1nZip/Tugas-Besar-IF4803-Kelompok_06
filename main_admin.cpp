@@ -28,32 +28,33 @@ void menuAdmin(ListParent &L) {
         cout << "Choose option: ";
         cin >> option;
 
-        switch (option) {
-            case 1:
-                menuParent(L);
-                break;
-            case 2:
-                menuChild(L);
-                break;
+        if (option == 1){
+            menuParent(L);
+        } else if (option == 2){
+            menuChild(L);
+        } else if (option == 0){
+            system("cls");
+        } else {
+            system("cls");
+            cout << "Opsi invalid euy~ \n";
         }
     }
 }
 
 
-
 void menuParent(ListParent &L) {
     int option = -99;
     while (option != 0) {
-        cout << "=========== Menu Parent ===========\n";
-        cout << "1. Insert First Parent\n";
-        cout << "2. Insert Last Parent\n";
-        cout << "3. Insert Parent by ID (sorted)\n";
-        cout << "4. Delete Parent by ID\n";
-        cout << "5. View Parents\n";
-        cout << "6. View Parents + Child\n";
-        cout << "7. Kurir dengan Paket Terbanyak\n";
-        cout << "0. Back\n";
-        cout << "===================================\n";
+        cout << "============ Menu Parent =============\n";
+        cout << "|| 1. Insert First Parent           ||\n";
+        cout << "|| 2. Insert Last Parent            ||\n";
+        cout << "|| 3. Insert Parent by ID (sorted)  ||\n";
+        cout << "|| 4. Delete Parent by ID           ||\n";
+        cout << "|| 5. View Parents                  ||\n";
+        cout << "|| 6. View Parents + Child          ||\n";
+        cout << "|| 7. Kurir dengan Paket Terbanyak  ||\n";
+        cout << "|| 0. Back                          ||\n";
+        cout << "======================================\n";
         cout << "Choose option: ";
         cin >> option;
 
@@ -86,6 +87,11 @@ void menuParent(ListParent &L) {
 
         } else if (option == 7) {
              viewKurirWithMostPaket(L);
+        } else if (option == 0){
+            system("cls");
+        }else {
+            system("cls");
+            cout << "Opsi invalid euy~ \n";
         }
     }
 }
@@ -95,10 +101,10 @@ void menuChild(ListParent &L) {
 
     while (option != 0) {
         cout << "=========== Menu Child ===========\n";
-        cout << "1. Insert Paket ke Kurir\n";
-        cout << "2. Delete Paket dari Kurir\n";
-        cout << "3. View Paket Kurir\n";
-        cout << "0. Back\n";
+        cout << "|| 1. Insert Paket ke Kurir     ||\n";
+        cout << "|| 2. Delete Paket dari Kurir   ||\n";
+        cout << "|| 3. View Paket Kurir          ||\n";
+        cout << "|| 0. Back                      ||\n";
         cout << "==================================\n";
         cout << "Choose option: ";
         cin >> option;
@@ -146,6 +152,11 @@ void menuChild(ListParent &L) {
             }
 
             viewChild(P);
+        }else if (option == 0){
+            system("cls");
+        } else {
+            system("cls");
+            cout << "Opsi invalid euy~ \n";
         }
     }
 }

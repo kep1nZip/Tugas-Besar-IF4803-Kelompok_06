@@ -19,11 +19,11 @@ int main() {
 
     int option = 0;
     while (option != 3) {
-        cout << "\n================ MENU UTAMA ================\n";
-        cout << "1. Menu Admin\n";
-        cout << "2. Menu User (Studi Kasus)\n";
-        cout << "3. Exit\n";
-        cout << "============================================\n";
+        cout << "\n================== MENU UTAMA ================\n";
+        cout << "|| 1. Menu Admin                            ||\n";
+        cout << "|| 2. Menu User (Studi Kasus)               ||\n";
+        cout << "|| 3. Exit                                  ||\n";
+        cout << "==============================================\n";
         cout << "Choose option: ";
         cin >> option;
 
@@ -33,9 +33,12 @@ int main() {
         } else if (option == 2) {
             menuStudiKasus(listUser);
         } else if (option == 3) {
-            cout << "Program selesai.\n";
+            cout << "Sayonara <3 >W<\n";
+        }else if (option == 3){
+
         } else {
-            cout << "[!] Option invalid.\n";
+            system("cls");
+            cout << "Opsi invalid euy~ \n";
         }
     }
 

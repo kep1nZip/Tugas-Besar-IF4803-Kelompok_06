@@ -6,16 +6,17 @@ void menuStudiKasus(ListParent &L) {
     int option = -99;
 
     while (option != 0) {
-        cout << "========= Menu Studi Kasus =========\n";
-        cout << "1. Studi Kasus 1 (Menyisipkan paket)\n";
-        cout << "2. Studi Kasus 2 (Menghapus paket)\n";
-        cout << "3. Studi Kasus 3 (Tampilkan paket pada kurir tertentu)\n";
-        cout << "4. Studi Kasus 4 (Rata-rata paket perkurir)\n";
-        cout << "5. Studi Kasus 5 (Total Paket)\n";
-        cout << "6. Studi Kasus 6 (Rata-rata berat paket)\n";
-        cout << "7. Studi Kasus 7 (Total berat paket perkurir)\n";
-        cout << "0. Back\n";
-        cout << "=====================================\n";
+        cout << "====================== Menu Studi Kasus ======================\n";
+        cout << "|| 1. Studi Kasus 1 (Menyisipkan paket)                     ||\n";
+        cout << "|| 2. Studi Kasus 2 (Menghapus paket)                       ||\n";
+        cout << "|| 3. Studi Kasus 3 (Tampilkan paket pada kurir tertentu)   ||\n";
+        cout << "|| 4. Studi Kasus 4 (Rata-rata paket perkurir)              ||\n";
+        cout << "|| 5. Studi Kasus 5 (Total Paket)                           ||\n";
+        cout << "|| 6. Studi Kasus 6 (Rata-rata berat paket)                 ||\n";
+        cout << "|| 7. Studi Kasus 7 (Total berat paket perkurir)            ||\n";
+        cout << "|| 8. Studi Kasus 8 (View kurir + paket)                    ||\n";
+        cout << "|| 0. Back                                                  ||\n";
+        cout << "==============================================================\n";
         cout << "Choose option: ";
         cin >> option;
 
@@ -67,7 +68,7 @@ void menuStudiKasus(ListParent &L) {
 
             adrParent P = findKurirByName(L, nama);
             if (P == nullptr) {
-                cout << "Kurir tidak ditemukan.\n";
+                cout << "[!] Kurir tidak ditemukan.\n";
                 continue;
             }
 
@@ -81,6 +82,13 @@ void menuStudiKasus(ListParent &L) {
             rataRataBeratPaket(L);
         } else if (option == 7){
             countTotalBeratPaket(L);
+        } else if (option == 8){
+            viewKurirDetail(L);
+        }else if (option == 0){
+            system("cls");
+        } else {
+            system("cls");
+            cout << "Opsi invalid euy~ \n";
         }
     }
 }
