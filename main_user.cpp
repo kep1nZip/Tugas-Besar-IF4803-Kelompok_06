@@ -7,17 +7,60 @@ void menuStudiKasus(ListParent &L) {
 
     while (option != 0) {
         cout << "========= Menu Studi Kasus =========\n";
-        cout << "1. Studi Kasus 1 (Tampilkan paket pada kurir tertentu)\n";
-        cout << "2. Studi Kasus 2 (Rata-rata paket perkurir)\n";
-        cout << "3. Studi Kasus 3 (Total Paket)\n";
-        cout << "4. Studi Kasus 4 (Rata-rata berat paket)\n";
-        cout << "5. Studi Kasus 5 (Total berat paket perkurir)\n";
+        cout << "1. Studi Kasus 1 (Menyisipkan paket)\n";
+        cout << "2. Studi Kasus 2 (Menghapus paket)\n";
+        cout << "3. Studi Kasus 3 (Tampilkan paket pada kurir tertentu)\n";
+        cout << "4. Studi Kasus 4 (Rata-rata paket perkurir)\n";
+        cout << "5. Studi Kasus 5 (Total Paket)\n";
+        cout << "6. Studi Kasus 6 (Rata-rata berat paket)\n";
+        cout << "7. Studi Kasus 7 (Total berat paket perkurir)\n";
         cout << "0. Back\n";
         cout << "=====================================\n";
         cout << "Choose option: ";
         cin >> option;
 
-        if (option == 1) {
+        if  (option == 1) {
+            string nama;
+            cout << "\nMasukkan nama kurir: ";
+            cin >> nama;
+
+            adrParent P = findKurirByName(L, nama);
+            if (P == nullptr) {
+                cout << "[!] Kurir tidak ditemukan.\n";
+                continue;
+            }
+
+            infotypeChild X;
+            cout << "ID Paket       : ";
+            cin >> X.idPaket;
+            cout << "Nama Penerima  : ";
+            cin >> X.namaPenerima;
+            cout << "Alamat         : ";
+            cin >> X.alamat;
+            cout << "Berat(kg)      : ";
+            cin >> X.berat;
+
+            adrChild C = createElemenChild(X);
+            insertChild(P, C);
+
+            cout << "[+] Paket berhasil disisipkan!\n";
+        } else if (option == 2) {
+            string nama;
+            cout << "\nMasukkan nama kurir: ";
+            cin >> nama;
+
+            adrParent P = findKurirByName(L, nama);
+            if (P == nullptr) {
+                cout << "[!] Kurir tidak ditemukan.\n";
+                continue;
+            }
+
+            int idPaket;
+            cout << "ID paket yang ingin dihapus: ";
+            cin >> idPaket;
+
+            deleteChildByCondition(P, idPaket);
+        } else if (option == 3) {
             string nama;
             cout << "Nama kurir: ";
             cin >> nama;
@@ -30,13 +73,13 @@ void menuStudiKasus(ListParent &L) {
 
             viewChild(P);
 
-        } else if (option == 2) {
+        } else if (option == 4) {
             rataRataPaketPerKurir(L);
-        } else if (option == 3) {
+        } else if (option == 5) {
             countTotalPaket(L);
-        } else if (option == 4){
+        } else if (option == 6){
             rataRataBeratPaket(L);
-        } else if (option == 5){
+        } else if (option == 7){
             countTotalBeratPaket(L);
         }
     }

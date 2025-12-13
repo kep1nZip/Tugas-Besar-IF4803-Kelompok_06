@@ -125,9 +125,6 @@ void deleteParentByCondition(ListParent &L, int idKurir) {
     delete P;
 }
 
-
-/* =======================================================
-=======
 /* ======================================================
    INSERT CHILD BERDASARKAN KONDISI (URUT ID PAKET)
    ======================================================*/
@@ -247,64 +244,6 @@ void rataRataPaketPerKurir(ListParent L) {
     }
 
     cout << "Rata-rata paket per kurir: " << rata << endl;
-}
-
-/* ======================================================
-   LIHAT SEMUA KURIR
-   ======================================================*/
-
-void viewAllKurir(ListParent L) {
-    if (isEmptyParent(L)) {
-        cout << "Tidak ada data kurir.\n";
-        return;
-    }
-
-    adrParent P = L.first;
-    cout << "\n===== DAFTAR KURIR =====\n";
-
-    while (P != nullptr) {
-        cout << "ID: " << P->info.idKurir
-             << " | Nama: " << P->info.namaKurir << endl;
-        P = P->next;
-    }
-
-    cout << "========================\n";
-}
-
-/* ======================================================
-   LIHAT SEMUA KURIR + DETAIL/PAKETNYA
-   ======================================================*/
-void viewKurirDetail(ListParent L) {
-    if (isEmptyParent(L)) {
-        cout << "List kurir kosong.\n";
-        return;
-    }
-
-    adrParent P = L.first;
-
-    cout << "\n======= DETAIL SEMUA KURIR =======\n";
-
-    while (P != nullptr) {
-        cout << "\nKurir: " << P->info.namaKurir
-             << " (ID: " << P->info.idKurir << ")\n";
-
-        adrChild C = P->firstChild;
-
-        if (C == nullptr) {
-            cout << "   Tidak ada paket.\n";
-        } else {
-            cout << "   Daftar Paket:\n";
-            while (C != nullptr) {
-                cout << "     - ID Paket: " << C->info.idPaket
-                     << " | Penerima: " << C->info.namaPenerima
-                     << " | Alamat: " << C->info.alamat << endl;
-                C = C->next;
-            }
-        }
-
-        cout << "--------------------------------\n";
-        P = P->next;
-    }
 }
 
 /* ======================================================

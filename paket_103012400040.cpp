@@ -91,6 +91,7 @@ void viewChild(adrParent p) {
         cout << "- ID Paket   : " << c->info.idPaket << endl;
         cout << "  Penerima   : " << c->info.namaPenerima << endl;
         cout << "  Alamat     : " << c->info.alamat << endl;
+        cout << "  Berat(kg)  : " << c->info.berat << endl;
         cout << "-------------------------------------\n";
         c = c->next;
     }
