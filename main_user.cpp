@@ -41,10 +41,23 @@ void menuStudiKasus(ListParent &L) {
             cout << "Berat(kg)      : ";
             cin >> X.berat;
 
-            adrChild C = createElemenChild(X);
-            insertChild(P, C);
+            adrChild Q = P->firstChild;
+            bool duplikat = false;
 
-            cout << "[+] Paket berhasil disisipkan!\n";
+            while (Q != nullptr) {
+                if (Q->info.idPaket == X.idPaket) {
+                    duplikat = true;
+                }
+                Q = Q->next;
+            }
+
+            if (duplikat) {
+                cout << "[!] ID paket sudah ada. Gagal insert.\n";
+            } else {
+                adrChild C = createElemenChild(X);
+                insertChild(P, C);
+                cout << "[+] Paket berhasil disisipkan!\n";
+            }
         } else if (option == 2) {
             string nama;
             cout << "\nMasukkan nama kurir: ";

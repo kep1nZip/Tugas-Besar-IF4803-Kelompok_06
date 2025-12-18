@@ -60,18 +60,62 @@ void menuParent(ListParent &L) {
 
         if (option == 1) {
             infotypeParent x = inputDataKurir();
-            adrParent P = createElemenParent(x);
-            insertFirstParent(L, P);
+
+            adrParent Q = L.first;
+            bool duplikat = false;
+
+            while (Q != nullptr) {
+                if (Q->info.idKurir == x.idKurir) {
+                    duplikat = true;
+                }
+                Q = Q->next;
+            }
+            if (duplikat) {
+                cout << "[!] Gagal insert. ID kurir sudah terdaftar.\n";
+            } else {
+                adrParent P = createElemenParent(x);
+                insertFirstParent(L, P);
+                cout << "[+] Kurir berhasil ditambahkan.\n";
+            }
 
         } else if (option == 2) {
             infotypeParent x = inputDataKurir();
-            adrParent P = createElemenParent(x);
-            insertLastParent(L, P);
 
+            adrParent Q = L.first;
+            bool duplikat = false;
+
+            while (Q != nullptr) {
+                if (Q->info.idKurir == x.idKurir) {
+                    duplikat = true;
+                }
+                Q = Q->next;
+            }
+            if (duplikat) {
+                cout << "[!] Gagal insert. ID kurir sudah terdaftar.\n";
+            } else {
+                adrParent P = createElemenParent(x);
+                insertLastParent(L, P);
+                cout << "[+] Kurir berhasil ditambahkan.\n";
+            }
         } else if (option == 3) {
             infotypeParent x = inputDataKurir();
-            adrParent P = createElemenParent(x);
-            insertParentByCondition(L, P);
+
+            adrParent Q = L.first;
+            bool duplikat = false;
+
+            while (Q != nullptr) {
+                if (Q->info.idKurir == x.idKurir) {
+                    duplikat = true;
+                }
+                Q = Q->next;
+            }
+            if (duplikat) {
+                cout << "[!] Gagal insert. ID kurir sudah terdaftar.\n";
+            } else {
+                adrParent P = createElemenParent(x);
+                insertParentByCondition(L, P);
+                cout << "[+] Kurir berhasil ditambahkan.\n";
+            }
 
         } else if (option == 4) {
             int id;
@@ -121,8 +165,24 @@ void menuChild(ListParent &L) {
             }
 
             infotypeChild Cinfo = inputDataPaket();
-            adrChild C = createElemenChild(Cinfo);
-            insertChild(P, C);
+
+            adrChild Q = P->firstChild;
+            bool duplikat = false;
+
+            while (Q != nullptr) {
+                if (Q->info.idPaket == Cinfo.idPaket) {
+                    duplikat = true;
+                }
+                Q = Q->next;
+            }
+
+            if (duplikat) {
+                cout << "[!] Gagal insert. ID paket sudah ada.\n";
+            } else {
+                adrChild C = createElemenChild(Cinfo);
+                insertChild(P, C);
+                cout << "[+] Paket berhasil ditambahkan.\n";
+            }
 
         } else if (option == 2) {
             string nama;
