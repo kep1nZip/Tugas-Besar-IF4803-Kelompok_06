@@ -132,34 +132,6 @@ void deleteParentByCondition(ListParent &L, int idKurir) {
 
 
 /* ======================================================
-   INSERT CHILD BERDASARKAN KONDISI (URUT ID PAKET)
-   ======================================================*/
-void insertChildByCondition(adrParent P, adrChild C) {
-    if (P == nullptr) return;
-
-    adrChild Q = P->firstChild;
-
-    if (Q == nullptr) {
-        P->firstChild = C;
-        C->next = nullptr;
-        return;
-    }
-
-    if (C->info.idPaket < Q->info.idPaket) {
-        C->next = Q;
-        P->firstChild = C;
-        return;
-    }
-
-    while (Q->next != nullptr && Q->next->info.idPaket < C->info.idPaket) {
-        Q = Q->next;
-    }
-
-    C->next = Q->next;
-    Q->next = C;
-}
-
-/* ======================================================
    DELETE CHILD BERDASARKAN KONDISI (ID PAKET)
    ======================================================*/
 void deleteChildByCondition(adrParent P, int idPaket) {
@@ -172,9 +144,10 @@ void deleteChildByCondition(adrParent P, int idPaket) {
         return;
     }
 
+    /*pertama*/
     if (C->info.idPaket == idPaket) {
         P->firstChild = C->next;
-        delete C;
+        C->next = nullptr;
         cout << "Paket " << idPaket << " berhasil dihapus.\n";
         return;
     }
@@ -182,6 +155,7 @@ void deleteChildByCondition(adrParent P, int idPaket) {
     adrChild prev = C;
     C = C->next;
 
+    /*selanjut2nya*/
     while (C != nullptr && C->info.idPaket != idPaket) {
         prev = C;
         C = C->next;
@@ -193,10 +167,11 @@ void deleteChildByCondition(adrParent P, int idPaket) {
     }
 
     prev->next = C->next;
-    delete C;
+    C->next = nullptr;
 
     cout << "Paket " << idPaket << " berhasil dihapus.\n";
 }
+
 
 /* ======================================================
    TOTAL PAKET (SEMUA KURIR)

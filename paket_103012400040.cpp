@@ -50,24 +50,6 @@ void deleteAfterChild(adrParent &p, adrChild prec, adrChild &c) {
     c->next = nullptr;
 }
 
-/* ======================================================
-   FIND ELEMENT CHILD
-   ======================================================*/
-
-adrChild findElemenChild(adrParent p, int idPaket) {
-    if (p == nullptr) return nullptr;
-
-    adrChild q = p->firstChild;
-
-    while (q != nullptr) {
-        if (q->info.idPaket == idPaket) {
-            return q;
-        }
-        q = q->next;
-    }
-
-    return nullptr;
-}
 
 /* ======================================================
    VIEW CHILD
