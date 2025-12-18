@@ -102,28 +102,34 @@ void deleteParentByCondition(ListParent &L, int idKurir) {
     while (C != nullptr) {
         adrChild temp = C;
         C = C->next;
-        delete temp;
+        temp->next = nullptr;
     }
+    P->firstChild = nullptr;
 
     if (P == L.first && P == L.last) {
         L.first = nullptr;
-        L.last = nullptr;
+        L.last  = nullptr;
     }
     else if (P == L.first) {
         L.first = P->next;
         L.first->prev = nullptr;
+        P->next = nullptr;
     }
     else if (P == L.last) {
         L.last = P->prev;
         L.last->next = nullptr;
+        P->prev = nullptr;
     }
     else {
         P->prev->next = P->next;
         P->next->prev = P->prev;
+        P->next = nullptr;
+        P->prev = nullptr;
     }
 
-    delete P;
+    cout << "Kurir dengan ID " << idKurir << " berhasil dihapus dari list.\n";
 }
+
 
 /* ======================================================
    INSERT CHILD BERDASARKAN KONDISI (URUT ID PAKET)
